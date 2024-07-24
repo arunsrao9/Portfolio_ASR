@@ -295,48 +295,109 @@ section{
     margin: auto 0;
 }
 
-/*Experience Section*/
+/* Experience Section */
 
-#experience{
+#experience {
     position: relative;
     padding: 2rem 1rem;
 }
 
-.experience-sub-title{
-    color: rgb(85,85,85);
-    font-weight: 600;
-    font-size: 1.75rem;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.experience-details-container{
+.timeline {
+    position: relative;
+    margin: 0 auto;
+    padding: 1rem 0;
+    width: 90%;
+    max-width: 800px; /* Reduce max-width to make it more compact */
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    gap: 2rem;
+    align-items: center;
 }
 
-.article-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: #C5C5C5;
+    z-index: -1;
 }
 
-article {
-    flex: 1 1 45%;
-    max-width: 45%;
+.timeline-marker {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: 0.5rem 0; /* Reduce margin */
+}
+
+.timeline-marker span {
+    background: #FFF;
+    padding: 0.3rem 0.6rem; /* Reduce padding */
+    border-radius: 10px;
+    font-weight: bold;
+    border: 2px solid #C5C5C5;
+}
+
+.timeline-event {
+    position: relative;
+    width: 45%;
+    padding: 0.5rem 0; /* Reduce padding */
     box-sizing: border-box;
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 10px; /* Add rounded corners */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
-    background-color: white; /* Ensure background color is white */
 }
 
-article:hover {
-    transform: translateY(-10px); /* Lift the element slightly on hover */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+.timeline-event .timeline-content {
+    position: relative;
+    background: white;
+    padding: 0.5rem 1rem; /* Reduce padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timeline-event.left .timeline-content {
+    text-align: right;
+}
+
+.timeline-event.right .timeline-content {
+    text-align: left;
+}
+
+.timeline-events-container {
+    display: flex;
+    justify-content: space-around; /* Make sure cards are close to the center line */
+    width: 100%;
+}
+
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #C5C5C5;
+    border: 2px solid #FFF;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-content h2 {
+    font-size: 1rem; /* Reduce font size */
+    margin-bottom: 0.25rem;
+}
+
+.timeline-content h3 {
+    font-size: 0.85rem; /* Reduce font size */
+    margin-bottom: 0.25rem;
+    color: #555;
+}
+
+.timeline-content p {
+    font-size: 0.85rem; /* Reduce font size */
+    margin-bottom: 0.25rem;
 }
 
 /* Add a subtle animation on load */
@@ -351,39 +412,35 @@ article:hover {
     }
 }
 
-article {
+.timeline-event {
     animation: fadeInUp 0.5s ease forwards;
-    opacity: 0; /* Start with opacity 0 */
-    animation-delay: calc(0.1s * var(--order)); /* Stagger the animation based on the order */
+    opacity: 0;
+    animation-delay: calc(0.1s * var(--order));
 }
+/* Projects Section */
 
-article.icon{
-    cursor: default;
-}
-
-/*Projects Section*/
-
-#projects{
+#projects {
     position: relative;
+    margin-top: 4rem; /* Add space above the section to avoid overlap */
 }
 
-.color-container{
+.color-container {
     border-color: rgb(163,163,163);
     background: rgb(250,250,250);
 }
 
-.project-img{
+.project-img {
     border-radius: 2rem;
     width: 90%;
     height: 90%;
 }
 
-.project-title{
+.project-title {
     margin: 1rem;
     color: black;
 }
 
-.project-btn{
+.project-btn {
     color: black;
     border-color: rgb(163,163,163);
 }
