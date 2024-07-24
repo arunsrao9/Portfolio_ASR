@@ -288,6 +288,12 @@ section{
     gap: 4rem;
     height: 80%;
 }
+.about-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    max-width: 800px;
+}
 
 .section__pic-container{
     height: 400px;
